@@ -5,7 +5,10 @@ import ReviewDetails from '../screens/reviewDetails'
 
 const screens = {
     Home: {
-        screen: Home
+        screen: Home,
+        navigationOptions: {
+            title: ''
+        }
     },
     ReviewDetails: {
         screen: ReviewDetails

@@ -6,6 +6,7 @@ export default function Home({navigation}) {
 
     const pressHandler = () => {
         navigation.navigate('ReviewDetails')
+        // navigation.push('ReviewDetails')
     }
 
     return (
