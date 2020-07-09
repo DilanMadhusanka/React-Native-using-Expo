@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     },
     icon: {
         position: 'absolute',
-        left: 5
+        left: 0
     },
     headerTitle: {
         flexDirection: 'row'
