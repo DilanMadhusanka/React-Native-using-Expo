@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, FlatList, TouchableOpacity, Modal } from 'react
 import { globalStyles } from '../styles/global/'
 import Card from '../shared/card';
 import { MaterialIcons } from '@expo/vector-icons';
+import ReviewForm from './reviewForm';
 
 export default function Home({ navigation }) {
 
@@ -14,6 +15,14 @@ export default function Home({ navigation }) {
         { title: 'Ape Gama', rating: 3, body: 'this is the novel story', key: '3' }
     ])
 
+    const addReview = (review) => {
+        review.key = Math.random().toString();
+        setReviews((currentReview) => {
+            return [review, ...currentReview];
+        });
+        setModalOpen(false)
+    }
+
     return (
         <View style={globalStyles.container}>
             <Modal visible={modalOpen} animationType='slide'>
@@ -24,7 +33,7 @@ export default function Home({ navigation }) {
                         style={{ ...styles.modalToggle, ...styles.modalClose }}
                         onPress={() => setModalOpen(false)}
                     />
-                    <Text>Hello from the modal :)</Text>
+                    <ReviewForm addReview={addReview} />
                 </View>
             </Modal>
             <MaterialIcons
